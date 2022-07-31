@@ -1,5 +1,30 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
-<h1> Test !! </h1>
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+
+    {% endif %}
+
+        {% if all_items %}
+            <table class="table table-bordered">
+            {% for things in all_items %}
+                <tr>
+                    <td>{{ things.item }}</td>
+                    <td class="text-center">{{ things.completed }}</td>
+                    <td class="text-center">Delete</td>
+                <tr>
+            
+            {% endfor %}
+            </table>       
+        {% endif %}
+
+
 {% endblock content %}

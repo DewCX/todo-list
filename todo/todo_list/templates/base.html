@@ -18,7 +18,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
             </ul>
-            <form class="d-flex" role="search">
+            <form class="d-flex" method="POST">
                 {% csrf_token %}
               <input class="form-control me-2" type="search" placeholder="Add Item" aria-label="Search" name="item">
               <button class="btn btn-outline-secondary" type="submit">Add to List</button>
