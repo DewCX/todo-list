@@ -18,7 +18,7 @@
             {% for things in all_items %}
             {% if things.completed %}
                 <tr class="table-secondary">
-                    <td>{{ things.item }}</td>
+                    <td class="striker">{{ things.item }}</td>
                     <td class="text-center"><a href="{% url 'uncross' things.id %}"> Uncross
                     </a></td>
                     <td class="text-center">
