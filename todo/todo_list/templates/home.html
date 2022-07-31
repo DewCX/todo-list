@@ -19,7 +19,9 @@
                 <tr>
                     <td>{{ things.item }}</td>
                     <td class="text-center">{{ things.completed }}</td>
-                    <td class="text-center">Delete</td>
+                    <td class="text-center">
+                        <a href="{% url 'delete' things.id %}"> Delete </a>
+                    </td>
                 <tr>
             
             {% endfor %}

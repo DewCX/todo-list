@@ -15,3 +15,12 @@ def home(request):
     else:
         all_items = List.objects.all
         return render(request, 'home.html', {'all_items': all_items})
+
+
+#Activate Delete Button
+
+def delete(request, list_id):
+    item = List.objects.get(pk=list_id)
+    item.delete()
+    messages.success(request, ("Item Has Been Deleted"))
+    return redirect('home')
